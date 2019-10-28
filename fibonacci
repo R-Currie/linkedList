@@ -1,0 +1,21 @@
+const iterative_fib = (num) => {
+    let first = 0;
+    let second = 1;
+    let answer = 0;
+    for (var i = 1; i <= num; i++) {
+        answer = second;
+        second += first;
+        first = answer;
+    }
+    return answer;
+}
+
+const recursive_fib = (num) => {
+    if (num < 2){
+        return num;
+    }
+    return recursive_fib(num - 1) + recursive_fib(num - 2);
+}
+
+console.log(iterative_fib(9));
+console.log(recursive_fib(9));
